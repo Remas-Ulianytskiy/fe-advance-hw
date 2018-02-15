@@ -39,8 +39,6 @@ function main() {
 
     alert('There are no seats!');
 
-  } else if (numberMemmbers == '') {
-    alert('You must enter the number of members!');
   } else {
     alert('Incorrect value!');
   }
