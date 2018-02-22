@@ -1,50 +1,32 @@
-// keyboard button (string)
-const firstRowKeyboard = 'qwertyuiop[]';
-const secondRowKeyboard = 'asdfghjkl;\'';
-const thirdRowKeyboard = 'zxcvbnm,./';
+// rows of keyboard
+const firstRow = 'qwertyuiop[]';
+const secondRow = 'asdfghjkl;\'';
+const thirdRow = 'zxcvbnm,./';
 
-// string to array
-const firstArr = firstRowKeyboard.split('');
-const secondArr = secondRowKeyboard.split('');
-const thirdArr = thirdRowKeyboard.split('');
+// keyboard array
+const keyboard = [firstRow, secondRow, thirdRow];
 
-// array association
-const keyboardArr = firstArr.concat(secondArr, thirdArr);
+// index constructor
+const hello = (
+  keyboard[1][5] + keyboard[0][2]
+  + keyboard[1][8] + keyboard[1][8]
+  + keyboard[0][8]
+);
+
+const javascript = (
+  keyboard[1][6] + keyboard[1][0]
+  + keyboard[2][3] + keyboard[1][0]
+  + keyboard[1][1] + keyboard[2][2]
+  + keyboard[0][3] + keyboard[0][7]
+  + keyboard[0][9] + keyboard[0][4]
+);
+
+const trainer = (
+  keyboard[0][4] + keyboard[0][3]
+  + keyboard[1][0] + keyboard[0][7]
+  + keyboard[2][5] + keyboard[0][2]
+  + keyboard[0][3]
+);
 
 // result
-console.log(
-  keyboardArr[17]+keyboardArr[2]
-  +keyboardArr[20]+keyboardArr[20]
-  +keyboardArr[8]
-);
-
-console.log(
-  keyboardArr[18]+keyboardArr[12]
-  +keyboardArr[26]+keyboardArr[12]
-  +keyboardArr[13]+keyboardArr[25]
-  +keyboardArr[3]+keyboardArr[7]
-  +keyboardArr[9]+keyboardArr[4]
-);
-
-console.log(
-  keyboardArr[4]+keyboardArr[3]
-  +keyboardArr[12]+keyboardArr[7]
-  +keyboardArr[28]+keyboardArr[2]
-  +keyboardArr[3]
-);
-
-// index search
-keyboardArr.indexOf('h'); // 17
-keyboardArr.indexOf('e'); // 2
-keyboardArr.indexOf('l'); // 20
-keyboardArr.indexOf('o'); // 8
-keyboardArr.indexOf('j'); // 18
-keyboardArr.indexOf('a'); // 12
-keyboardArr.indexOf('v'); // 26
-keyboardArr.indexOf('s'); // 13
-keyboardArr.indexOf('c'); // 25
-keyboardArr.indexOf('r'); // 3
-keyboardArr.indexOf('i'); // 7
-keyboardArr.indexOf('p'); // 9
-keyboardArr.indexOf('t'); // 4
-keyboardArr.indexOf('n'); // 28
+console.log(hello, javascript, trainer);
