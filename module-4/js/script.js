@@ -20,4 +20,14 @@ function getRandomRow(min, max) {
   return keyboard[randomRow][randomChar];
 }
 
-console.log(getRandomRow(0, 3));
+const randomChar = getRandomRow(0, 3);
+
+console.log(`
+  First task result:
+  ${keyboard}
+`);
+
+console.log(`
+  Second and Third task result:
+  ${randomChar}
+`);
