@@ -12,15 +12,15 @@ function addKeyboard(parameter) {
 const keyboard = addKeyboard(alphabet);
 
 // second and third task
-function getRandomRow(min, max) {
+function getRandomRow(min, max, min2) {
   const randomRow = Math.floor(Math.random() * (max - min)) + min;
   const randomRowLenght = keyboard[randomRow].length;
-  const randomChar = Math.floor(0 + Math.random() * (randomRowLenght - 0));
+  const randomChar = Math.floor(min2 + Math.random() * (randomRowLenght - min2));
 
   return keyboard[randomRow][randomChar];
 }
 
-const randomChar = getRandomRow(0, 3);
+const randomChar = getRandomRow(0, 3, 0);
 
 console.log(`
   First task result:
