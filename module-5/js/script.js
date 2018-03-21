@@ -1,22 +1,21 @@
 const keyboard = {
   layouts: {
     en: {
-      alphabet: 'qwertyuiopasdfghjklzxcvbnm';
-      topRow: [alphabet.slice(0, 10)],
-      middleRow: [alphabet.slice(10, 19)],
-      bottomRow: [alphabet.slice(19, 28);]
+      topRow: 'qwertyuiop',
+      middleRow: 'asdfghjkl',
+      bottomRow: 'zxcvbnm'
     },
 
     ru: {
-      topRow: ['йцукенгшщзхъ'],
-      middleRow: ['фывапролджэ'],
-      bottomRow: ['ячсмитьбю']
+      topRow: 'йцукенгшщзхъ',
+      middleRow: 'фывапролджэ',
+      bottomRow: 'ячсмитьбю'
     },
 
     ua: {
-      topRow: ['йцукенгшщзхї'],
-      middleRow: ['фівапролджє'],
-      bottomRow: ['ячсмитьбю']
+      topRow: 'йцукенгшщзхї',
+      middleRow: 'фівапролджє',
+      bottomRow: 'ячсмитьбю'
     }
   },
 
@@ -24,19 +23,42 @@ const keyboard = {
   currentLang: ''
 };
 
+let correctValue = false;
 
-
-
-
-// cycle start
-do {
-  const languageChoice = prompt(`
+while (!correctValue) {
+  const choice = prompt(`
     Please choose a language.
-    En - 0, Ru - 1, Ua - 2
-  `)
+    En-0, Ru-1, Ua-2
+  `);
 
-  const selectedOption = ['En', 'Ru', 'Ua']
+  switch (choice) {
+    case '0': case '1': case '2':
+      keyboard.currentLang = keyboard.langs[choice];
+      alert(`You choose ${keyboard.currentLang}`);
+      console.log(`currentLang = ${keyboard.currentLang}`);
+      correctValue = true; break;
 
-  alert(`you chouse ${selectedOption[parseInt(languageChoice)]}`)
+    case null:
+      correctValue = true; break;
 
-} while (languageChoice !== '0' && languageChoice !== '1' && languageChoice !== '2'); // условие ?
+    default:
+      alert('You choose an unavailable language.'); break;
+  };
+};
+
+function getRandCharInAlph(min, max, min2) {
+  const getRandRow = Math.floor(Math.random() * (max - min)) + min;
+  let randRow;
+
+  switch (getRandRow) {
+    case 0: randRow = keyboard.layouts[keyboard.currentLang].topRow; break;
+    case 1: randRow = keyboard.layouts[keyboard.currentLang].middleRow; break;
+    case 2: randRow = keyboard.layouts[keyboard.currentLang].bottomRow; break;
+  }
+
+  const randRowLenght = randRow.length;
+  const getRandChar = min2 + Math.floor(Math.random() * (randRowLenght - min2));
+  return randRow[getRandChar];
+};
+
+console.log(`random char: ${getRandCharInAlph(0, 3, 0)}`);
