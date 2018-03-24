@@ -1,13 +1,13 @@
 const keyTrainer = {
   chars: ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'],
 
-  charCount: '',
+  charCount: null,
 
-  task: '',
+  task: null,
 
-  userInput: '',
+  userInput: null,
 
-  userErrors: '',
+  userErrors: null,
 
   setCharCount: function () {
     let check = false;
@@ -39,7 +39,7 @@ const keyTrainer = {
       array.push(this.chars[getRandChar]);
     };
 
-    this.task = array;
+    this.task = array.join('');
   },
 
   startTask: function () {
@@ -48,33 +48,41 @@ const keyTrainer = {
       ${this.task}
     `);
 
-    this.userInput = new Array(task);
+    this.userInput = task;
+    this.userErrors = 0;
 
-    let counter = 0;
+    let i;
     let mistake = 0;
 
-    for (i = 0; i < this.task.lenght; i++) {
+    for (i = 0; i < this.task.length; i++) {
       if (this.task[i] != this.userInput[i]) {
-        this.userErrors = mistake++;
+        this.userErrors = ++mistake;
       };
     };
   },
 
   errorCheck: function () {
-    console.log(`Errors quantity: ${this.userErrors}`);
-    if (this.userErrors != 0) {
+    if (this.userErrors == 0) {
       alert('Congratulations');
     } else {
-      alert(`Next time, bro :)`)
+      alert(`Next time, bro :)`);
     };
+  },
+
+  start: function () {
+    this.setCharCount();
+    this.createTask();
+    this.startTask();
+    this.errorCheck();
+
+    // export result to console
+    console.log(`
+      Characters: ${this.charCount}
+      Task: ${this.task}
+      User Input: ${this.userInput}
+      Number of mistakes: ${this.userErrors}
+    `);
   }
 };
 
-function start() {
-  keyTrainer.setCharCount();
-  keyTrainer.createTask();
-  keyTrainer.startTask();
-  keyTrainer.errorCheck();
-}
-
-start();
+keyTrainer.start();
