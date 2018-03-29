@@ -1,13 +1,9 @@
 const keyTrainer = {
   chars: ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'],
-
   charCount: null,
-
   task: null,
-
   userInput: null,
-
-  userErrors: null,
+  userErrors: 0,
 
   setCharCount: function () {
     let check = false;
@@ -32,9 +28,8 @@ const keyTrainer = {
 
   createTask: function () {
     const array = [];
-    let i;
 
-    for (i = 0; i < this.charCount; i++) {
+    for (let i = 0; i < this.charCount; i++) {
       const getRandChar = Math.floor(Math.random() * (this.chars.length));
       array.push(this.chars[getRandChar]);
     };
@@ -49,14 +44,10 @@ const keyTrainer = {
     `);
 
     this.userInput = task;
-    this.userErrors = 0;
 
-    let i;
-    let mistake = 0;
-
-    for (i = 0; i < this.task.length; i++) {
+    for ( let i = 0; i < this.task.length; i++) {
       if (this.task[i] != this.userInput[i]) {
-        this.userErrors = ++mistake;
+        this.userErrors += 1;
       };
     };
   },
@@ -75,7 +66,6 @@ const keyTrainer = {
     this.startTask();
     this.errorCheck();
 
-    // export result to console
     console.log(`
       Characters: ${this.charCount}
       Task: ${this.task}
@@ -86,3 +76,7 @@ const keyTrainer = {
 };
 
 keyTrainer.start();
+
+// do while
+// parse in prompt
+// 
