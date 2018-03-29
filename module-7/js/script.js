@@ -24,7 +24,6 @@ function createLayout(keyboard) {
     button.classList.add(className);
     button.innerText = content;
     return button;
-    // keyRow.append(keyButton);
   };
 
   for (key in keyboard) {
@@ -35,16 +34,7 @@ function createLayout(keyboard) {
       const keyButton = createButton(keyboard[key][i], 'keyboard-button');
       keyRow.append(keyButton);
     };
-
   };
-
-
-    // for (let i2 = 0; i < keyboard[key].length; i++) {
-    //   const button = document.createElement('button').classList.add('key-button');
-    //   button.innerText = (keyboard[key][i2]);
-    //   row.append(button);
-    // }
-  // }
 };
 
 createLayout(keyboard);
