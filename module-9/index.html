@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Module-9</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="info-block">
+      <p>You press: </p>
+      <p id="press-key"></p>
+    </div>
+    <div id="keyboard-container"></div>
+  </div>
+
+  <script type="ntp/template" id="template">
+    <ul class="keyboard">
+      <% keyboardArray.forEach(item => { %>
+        <li class="keyboard__row">
+          <% item.forEach(index => { %>
+            <button class="keyboard__button"><%= index %></button>
+          <% }) %>
+        </li>
+      <% }); %>
+      <li class="keyboard__row">
+        <button class="keyboard__button keyboard__space-button"></button>
+      </li>
+    </ul>
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
+
+  <script>
+    const keyboardString = "qwertyuiop[]asdfghjkl;'zxcvbnm,./";
+    let keyboardArray = [[],[],[]];
+
+    function keyboardLayout(alphabet) {
+      const keyboardSplit = alphabet.split("");
+      for (let i = 0; i < keyboardSplit.length; i++) {
+        if ( i <= 11) {
+          keyboardArray[0].push(keyboardSplit[i]);
+        } else if (i > 11 && i < 23) {
+          keyboardArray[1].push(keyboardSplit[i]);
+        } else {
+          keyboardArray[2].push(keyboardSplit[i]);
+        }
+      };
+    };
+
+    keyboardLayout(keyboardString);
+
+    const template = document.querySelector('#template').textContent.trim();
+    const compiled = _.template(template)(keyboardArray);
+    const container = document.querySelector('#keyboard-container');
+    container.innerHTML = compiled;
+  </script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
