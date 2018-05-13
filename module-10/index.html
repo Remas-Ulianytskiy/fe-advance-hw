@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Module-10</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <button id="start-task" class="button" tabindex=1>Start Task</button>
+      <button id="stop-task" class="button" tabindex=3>Stop Task</button>
+    </div>
+    <div class="main">
+      <div class="timer-block">
+        <span class="timer">00:000</span>
+      </div>
+      <div class="task-block">
+        <p class="text">Type this chars:</p>
+        <span class="task"></span>
+        <input id="task-input" type="text" tabindex=2 placeholder="Type chars here">
+      </div>
+    </div>
+    <div class="aside">
+      <span class="text">Current result:</span>
+      <div class="current-result">
+        <span class="current-time"></span>
+        <span class="current-chars"></span>
+        <span class="current-quantity"></span>
+      </div>
+      <span class="text">The best result:</span>
+      <div class="best-result">
+        <span class="best-time"></span>
+        <span class="best-chars"></span>
+        <span class="best-quantity"></span>
+      </div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>

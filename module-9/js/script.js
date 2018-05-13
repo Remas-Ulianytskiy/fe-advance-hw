@@ -19,11 +19,11 @@ const keyUpEvent = (e) => {
     for (let i = 0; i < allButtons.length; i++) {
       if (allButtons[i].innerHTML === e.key) {
         allButtons[i].classList.remove('keyboard__button--active');
-        press.innerHTML = '';
+        press.innerHTML = null;
       }
     }
   }
 };
 
-window.addEventListener("keydown", keyDownEvent);
-window.addEventListener("keyup", keyUpEvent);
+document.addEventListener("keydown", keyDownEvent);
+document.addEventListener("keyup", keyUpEvent);
