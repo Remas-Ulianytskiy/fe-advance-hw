@@ -2,11 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Module-11</title>
 </head>
 <body>
+  <div class="wrapper">
+    <h1 class="heading">Admin Panel</h1>
+    <form action="">
+      <div class="block">
+        <p class="text">Get all Users</p>
+        <button id="get-all-users-btn" class="button" type="button" name="button">push</button>
+      </div>
+      <div class="block">
+        <p class="text">Get User by ID</p>
+        <button id="get-user-by-id-btn" class="button" type="button" name="button">push</button>
+        <input id="get-user-by-id-input" class="input" type="text" placeholder="Type ID here" style="width: 381px">
+      </div>
+      <div class="block">
+        <p class="text">Add User</p>
+        <button id="add-user-btn" class="button" type="button" name="button">push</button>
+        <input id="add-user-name-input" class="input" type="text" placeholder="Type name here">
+        <input id="add-user-age-input" class="input" type="text" placeholder="Type age here">
+      </div>
+      <div class="block">
+        <p class="text">Remove User</p>
+        <button id="remove-user-btn" class="button" type="button" name="button">push</button>
+        <input id="remove-user-input" class="input" type="text" placeholder="Type name here">
+      </div>
+      <div class="block">
+        <p class="text">Update User</p>
+        <button id="update-user-btn" class="button" type="button" name="button">push</button>
+        <input id="update-user-id-input" class="input" type="text" placeholder="Type ID here">
+        <input id="update-user-name-input" class="input" type="text" placeholder="Type name here">
+        <input id="update-user-age-input" class="input" type="text" placeholder="Type age here">
+      </div>
+    </form>
+    <div class="result-block">
+      <h2 class="title">Result Panel</h2>
+      <table class="result-block__table">
+          <thead>
+            <tr class="info-row">
+              <th>ID</th>
+              <th>NAME</th>
+              <th>AGE</th>
+            </tr>
+          </thead>
+          <tbody id="js-tbody"></tbody>
+        </table>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+  <script type="text/template" id="table-row">
+    <tr scope="row">
+      <td><%- id%></td>
+      <td><%- name%></td>
+      <td><%- age%></td>
+    </tr>
+  </script>
   <script src="js/script.js"></script>
 </body>
 </html>
