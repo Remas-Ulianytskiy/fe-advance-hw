@@ -1,0 +1,28 @@
+.wrapper {
+  width: 300px;
+  padding: 10px;
+  margin: 0 auto;
+  font-size: 18px;
+  font-style: 'Tahoma', sans-serif;
+  background: #f0f0f0;
+}
+
+input {
+  height: 20px;
+  width: 98%;
+  padding-left: 2px;
+  border-radius: 4px;
+  border: 1px solid #b5b5b5;
+}
+
+.results {
+  font-size: 16px;
+}
+
+.success {
+  color: #4caf50;
+}
+
+.error {
+  color: #f44336;
+}
