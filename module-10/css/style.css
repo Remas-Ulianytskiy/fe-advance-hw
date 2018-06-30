@@ -1,8 +1,8 @@
 .wrapper {
   width: 380px;
-  margin: 40px auto 0;
-  padding: 25px 20px 40px;
-  font-family: Arial;
+  margin: 20px auto 0;
+  padding: 25px 20px;
+  font-family: Arial, sans-serif;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -56,9 +56,6 @@
   background: #fff;
 }
 
-.timer {
-}
-
 .task-block {
   height: 110px;
   display: flex;
@@ -75,6 +72,37 @@
   border-radius: 8px;
   border: 2px solid #c0c0c0;
   background: #fff;
+}
+
+button, input {
+  outline: none;
+}
+
+button:active {
+  background: #e1e2d2;
+}
+
+.clean {
+  width: 380px;
+  box-sizing: border-box;
+}
+
+.alert-msg-block {
+  width: 380px;
+  height: 20px;
+  margin: 20px auto 0;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+.alert-msg-title {
+  font-size: 20px;
+  position: absolute;
+  left: 19%;
+}
+
+footer {
+  margin: 20px 0 0;
 }
 
 #task-input {
@@ -95,6 +123,7 @@
 .aside {
   width: 160px;
   height: 220px;
+  padding: 5px;
   font-family: Arial;
   box-sizing: border-box;
   border-radius: 8px;
@@ -108,4 +137,15 @@
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
+}
+
+.alert-msg {
+  font-size: 30px;
+  font-weight: bold;
+  user-select: none;
+  position: absolute;
+}
+
+.heading {
+  font-weight: bold;
 }
