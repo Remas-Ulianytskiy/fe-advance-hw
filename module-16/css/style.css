@@ -1,0 +1,8 @@
+.text {
+  margin: 20px auto 0;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  user-select: none;
+  font-family: Arial, sans-serif;
+}
